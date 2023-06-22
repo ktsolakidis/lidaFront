@@ -1,0 +1,86 @@
+body {
+  background-color: #aaaea7;
+  font-family: "GFS Neohellenic", sans-serif;
+}
+
+header {
+  background-color: #bbd38b;
+  text-align: center;
+  width: 80%;
+  height: 5rem;
+  padding: 1rem;
+  margin: auto;
+  margin-bottom: 0.8rem;
+  border-radius: 1rem;
+  font-family: "GFS Neohellenic", sans-serif;
+  overflow: hidden;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+main {
+  width: 80%;
+  /* border: 2px solid black; */
+  margin: auto;
+  padding: 1.5rem;
+  background-color: #e8e6d4;
+  box-shadow: 2px 2px 2px rgb(173, 173, 173);
+  border-radius: 1rem;
+  font-family: "GFS Neohellenic", sans-serif;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.class {
+  width: 20%;
+  height: 6rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1px rgb(155, 155, 155);
+  background-color: #bbd38b;
+  padding: 0.4rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.class--title {
+  /* border: 1px solid black; */
+  text-align: center;
+  margin-top: 0.1rem;
+}
+
+.class--level {
+  /* border: 1px solid black; */
+  text-align: center;
+  margin-top: -0.4rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+input[name="class--id"],input[name="student--id"],input[name="classId"],input[name="className"] {
+  display: none;
+}
+
+button[type="submit"] {
+  background-color: rgb(74, 74, 74);
+  width: 60%;
+  height: 1.5rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 0.8rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffffff;
+  color: rgb(74, 74, 74);
+  transition: 0.14s ease-in-out;
+}
+
+#student--id{
+  display: none;
+}
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/valuation.css" />
+    <script defer src="/scripts/valuation.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h3><%=classInfo.name %></h3>
+      <h2>Φόρμα αξιολόγησης</h2>
+      <div id="info">
+        <div id="clock"></div>
+
+        <p id="student--name"><%=currentStudent.name%></p>
+        <p id="student--id"><%= currentStudent.id %></p>
+        <p id="class--id"><%= classInfo.id %></p>
+      </div>
+    </header>
+    <div id="bars--container">
+      <div class="section">
+        <div class="text">Δυσκολία κατανόησης θεωρίας</div>
+        <div class="move">
+          <div class="bar"> 
+            <div class="arrow"></div>
+          </div>
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text">Δυσκολία κατανόησης λυμένων ασκήσεων</div>
+        <div class="move">
+          <div class="bar">
+            <div class="arrow"></div>
+          </div>
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text">Δυσκολία κατανόησης μεθοδολογίας</div>
+        <div class="move">
+          <div class="bar">
+            <div class="arrow"></div>
+          </div>
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text">Δυσκολία κατανόησης εκφώνησης άσκησης</div>
+        <div class="move">
+          <div class="bar">
+            <div class="arrow"></div>
+          </div>
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text">Δυσκολία μετάφρασης δεδομένων άσκησης</div>
+        <div class="move">
+          <div class="bar">
+            <div class="arrow"></div>
+          </div>
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text">Γενική δυσκολία</div>
+        <div class="move">
+          <div class="bar">
+            <div class="arrow"></div>
+          </div>
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text">Μεταδοτικότητα</div>
+        <div class="move">
+          <div class="bar">
+            <div class="arrow"></div>
+          </div>
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text">Προτετοιμασία Μαθήματος</div>
+        <div class="move">
+          <div class="bar">
+            <div class="arrow"></div>
+          </div>
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text">Άλλη Δυσκολία</div>
+        <input type="text" id="other--diff" />
+      </div>
+      <form action="/submitValuation" method="POST">
+        <div id="form--inputs">
+          <input type="number" name="studentId" value="<%= currentStudent.id %>">
+          <input type="number" name="classId" value="<%= classInfo.id %>">
+          <input type="number" name="theory" class="form--field"   value="">
+          <input type="number" name="solvedExercises" class="form--field" value=""/>
+          <input type="number" name="methodology" class="form--field"  value=""/>
+          <input type="number"  name="pronunciation" class="form--field"  value=""/>
+          <input type="number" name="dataTranslation" class="form--field"  value=""/>
+          <input type="number" name="generalDifficulty" class="form--field" value=""/>
+          <input type="number" name="metadotikotita"  class="form--field"  value=""/>
+          <input type="number" name="preparation" class="form--field" value="11"/>
+          <input type="text" name="otherDifficulty" id="other--difference"  class="form--field" value="" />
+          
+        </div>
+        <button type="submit" id="sumbit--button">Υποβολή</button>
+      </form>
+    </div>
+  </body>
+</html>

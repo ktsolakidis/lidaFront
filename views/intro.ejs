@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/intro.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <% if(validation !== undefined ){ %>
+    <p id="valid"><%=validation.valid%></p>
+    <% } %>
+    <main>
+      <div id="teacher--message">
+        Εποκοινωνήστε με τον/την διδάσκων για να να πάρετε τους κωδικούς σας 
+      </div>
+      <div id="central--div">
+        <form action="/authenticate" method="POST">
+          <label for="username">Όνομα χρήστη</label>
+          <input type="text" id="username" name="username" /><br /><br />
+          <label for="password">Κωδικός</label>
+          <input type="password" id="password" name="password" /><br /><br />
+          <input type="submit" id="submit" value="Είσοδος" />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
+ 

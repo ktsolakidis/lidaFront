@@ -1,0 +1,17 @@
+body{
+  background-color: #aaaea7;
+}
+
+header {
+  background-color: #BBD38B;
+  text-align: center;
+  width: 80%;
+  height: 4rem;
+  padding: 1rem;
+  margin: auto;
+  margin-bottom: 0.8rem;
+  border-radius: 1rem;
+  font-family: 'GFS Neohellenic', sans-serif;
+  overflow: hidden;
+
+}
