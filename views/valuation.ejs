@@ -27,10 +27,11 @@
       </div>
     </header>
     <div id="bars--container">
+      <h3>Μέτρο δυσκολιών</h3>
       <div class="section">
         <div class="text">Δυσκολία κατανόησης θεωρίας</div>
         <div class="move">
-          <div class="bar"> 
+          <div class="bar">
             <div class="arrow"></div>
           </div>
           <div class="percentage"></div>
@@ -82,6 +83,88 @@
         </div>
       </div>
       <div class="section">
+        <div class="text">Άλλη Δυσκολία</div>
+        <div id="checkboxes">
+          <input
+            type="checkbox"
+            id="dysnoito"
+            name="Δυσνόητο"
+            value="Δυσνόητο"
+          />
+          <label for="dysnoito">Δυσνόητο</label>
+
+          <input
+            type="checkbox"
+            id="afirimeno"
+            name="Aφηρημένο"
+            value="Aφηρημένο"
+          />
+          <label for="afirimeno">Aφηρημένο</label>
+
+          <input
+          type="checkbox"
+          id="symvolismoi"
+          name="Συμβολισμοί"
+          value="Συμβολισμοί"
+        />
+        <label for="symvolismoi">Συμβολισμοί</label>
+
+   
+
+          <input
+            type="checkbox"
+            id="gnwseis_geometrias"
+            name="Γνώσεις Γεωμετρίας"
+            value="Γνώσεις Γεωμετρίας"
+          />
+          <label for="gnwseis_geometrias">Γνώσεις <br> Γεωμετρίας</label>
+
+          <input
+            type="checkbox"
+            id="grafikes_parastaseis"
+            name="Γραφικές Παραστάσεις"
+            value="Γραφικές Παραστάσεις"
+          />
+          <label for="grafikes_parastaseis">Γραφικές <br> Παραστάσεις</label>
+
+      
+
+          <input
+          type="checkbox"
+          id="megalo_ypovathro"
+          name="Μεγάλο Υπόβαθρο"
+          value="Μεγάλο Υπόβαθρο"
+        />
+        <label for="megalo_ypovathro">Μεγάλο <br>  Υπόβαθρο</label>
+
+          <input
+            type="checkbox"
+            id="orologia"
+            name="Ορολογία"
+            value="Ορολογία"
+          />
+          <label for="orologia">Ορολογία</label>
+
+          <input
+            type="checkbox"
+            id="prakseis"
+            name="Πράξεις"
+            value="Πράξεις"
+          />
+          <label for="prakseis">Πράξεις</label>
+
+          <input
+            type="checkbox"
+            id="syntheto"
+            name="Σύνθετο"
+            value="Σύνθετο"
+          />
+          <label for="syntheto">Σύνθετο</label>
+        </div>
+      </div>
+
+      <h3>Στοιχεία Διδάσκοντος</h3>
+      <div class="section">
         <div class="text">Μεταδοτικότητα</div>
         <div class="move">
           <div class="bar">
@@ -99,26 +182,78 @@
           <div class="percentage"></div>
         </div>
       </div>
-      <div class="section">
-        <div class="text">Άλλη Δυσκολία</div>
-        <input type="text" id="other--diff" />
-      </div>
+
       <form action="/submitValuation" method="POST">
         <div id="form--inputs">
-          <input type="number" name="studentId" value="<%= currentStudent.id %>">
-          <input type="number" name="classId" value="<%= classInfo.id %>">
-          <input type="number" name="theory" class="form--field"   value="">
-          <input type="number" name="solvedExercises" class="form--field" value=""/>
-          <input type="number" name="methodology" class="form--field"  value=""/>
-          <input type="number"  name="pronunciation" class="form--field"  value=""/>
-          <input type="number" name="dataTranslation" class="form--field"  value=""/>
-          <input type="number" name="generalDifficulty" class="form--field" value=""/>
-          <input type="number" name="metadotikotita"  class="form--field"  value=""/>
-          <input type="number" name="preparation" class="form--field" value="11"/>
-          <input type="text" name="otherDifficulty" id="other--difference"  class="form--field" value="" />
-          
+          <input
+            type="number"
+            id="student--id"
+            name="studentId"
+            value="<%= currentStudent.id %>"
+          />
+          <input
+            type="number"
+            id="class--id"
+            name="classId"
+            value="<%= classInfo.id %>"
+          />
+          <input type="number" name="theory" class="form--field" value="" />
+          <input
+            type="number"
+            name="solvedExercises"
+            class="form--field"
+            value=""
+          />
+          <input
+            type="number"
+            name="methodology"
+            class="form--field"
+            value=""
+          />
+          <input
+            type="number"
+            name="pronunciation"
+            class="form--field"
+            value=""
+          />
+          <input
+            type="number"
+            name="dataTranslation"
+            class="form--field"
+            value=""
+          />
+          <input
+            type="number"
+            name="generalDifficulty"
+            class="form--field"
+            value=""
+          />
+          <input
+            type="number"
+            name="metadotikotita"
+            class="form--field"
+            value=""
+          />
+          <input
+            type="number"
+            name="preparation"
+            class="form--field"
+            value="11"
+          />
+          <input
+            type="text"
+            name="otherDifficulty"
+            id="other--difference"
+            class="form--field"
+            value=""
+          />
         </div>
-        <button type="submit" id="sumbit--button">Υποβολή</button>
+        <button type="submit" id="temporary--submit--button">
+          Προσωρινή Υποβολή
+        </button>
+        <button type="submit" id="final--submit--button">
+          Οριστική Υποβολή
+        </button>
       </form>
     </div>
   </body>

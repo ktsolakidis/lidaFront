@@ -1,17 +1,22 @@
-body{
+body {
   background-color: #aaaea7;
 }
 
-form{
+form {
   text-align: right;
 }
 
-#form--inputs{
+#form--inputs {
   display: none;
 }
 
+h3{
+  text-align: center;
+  margin: 1.5rem;
+}
+
 header {
-  background-color: #BBD38B;
+  background-color: #bbd38b;
   text-align: center;
   width: 80%;
   height: 4rem;
@@ -19,9 +24,8 @@ header {
   margin: auto;
   margin-bottom: 0.8rem;
   border-radius: 1rem;
-  font-family: 'GFS Neohellenic', sans-serif;
+  font-family: "GFS Neohellenic", sans-serif;
   overflow: hidden;
-
 }
 
 header p {
@@ -35,26 +39,22 @@ header p {
   bottom: 10px; */
 }
 
-#info{
+#info {
   width: 100%;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
   height: 1rem;
-  justify-items:self-start;
+  justify-items: self-start;
   margin-top: -2rem;
   position: relative;
   bottom: 1rem;
-  
-  
 }
 
-#clock{
+#clock {
   display: flex;
   align-items: center;
   justify-content: center;
- 
-  
 }
 
 h3 {
@@ -63,7 +63,7 @@ h3 {
   margin: 0;
 }
 
-#bars--container{
+#bars--container {
   width: 80%;
   /* border: 2px solid black; */
   margin: auto;
@@ -72,25 +72,23 @@ h3 {
   background-color: #e8e6d4;
   box-shadow: 2px 2px 2px rgb(173, 173, 173);
   border-radius: 1rem;
-  font-family: 'GFS Neohellenic', sans-serif;
+  font-family: "GFS Neohellenic", sans-serif;
   font-size: 1.1rem;
 }
 
-.section{
+.section {
   width: 90%;
   display: flex;
   align-items: center;
   margin: 25px;
-  
 }
 
-
-.text{
+.text {
   width: 50%;
   text-align: center;
 }
 
-.move{
+.move {
   margin-right: 0;
   width: 50%;
 }
@@ -110,42 +108,75 @@ h3 {
   background-color: #242424;
   position: relative;
   left: 0;
-  top:-6px;
+  top: -6px;
   cursor: pointer;
   border-radius: 15px;
 }
 
-.percentage{
+.percentage {
   display: none;
 }
 
-#other--diff{
+#other--diff {
   margin: auto;
   width: 40%;
   height: 4rem;
-
 }
 
-#sumbit--button{
-  width: 8rem;
+#final--submit--button,
+#temporary--submit--button {
+  margin-top: 8px;
+  width: 10rem;
   border: none;
-  box-shadow: 1px 1px 1px grey;
-  font-size: 1.1rem;
-  padding: 0.2rem;
+  padding: 3px;
+  background-color: #e95237;
+  border-radius: 5px;
   cursor: pointer;
-  margin-right: 0.8rem;
-  border-radius: 0.4rem;
-  font-family: 'GFS Neohellenic', sans-serif;
-  background-color:#F7f6E7;
-
 }
 
-#sumbit--button:hover {
-  /* //transform: scale(1.2); */
-  transition: 0.2s ease-in-out;
-  background-color:#dbd7a6;
+#temporary--submit--button {
+  background-color: #e4aa5d;
 }
 
-#student--id,#class--id{
+#final--submit--button:hover,
+#temporary--submit--button:hover {
+  transform: scale(1.03);
+
+  transition: 0.5s;
+
+  background-color: #f9e213;
+
+  color: #050500;
+}
+
+#student--id,
+#class--id {
   display: none;
 }
+
+.disable {
+  pointer-events: none;
+  opacity: 0.5; /* Adjust the opacity to your preference */
+  cursor: not-allowed;
+}
+
+#checkboxes{
+  font-size: 1.1rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  margin-left: 2rem;
+
+}
+
+
+
+#checkboxes input, #checkboxes label{
+ margin: 0.2rem;
+ margin-top: 0.5rem;
+
+}
+
+#checkboxes input{
+  margin-left: 1rem;
+}
+

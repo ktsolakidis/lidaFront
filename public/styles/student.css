@@ -1,6 +1,10 @@
 body {
   background-color: #aaaea7;
   font-family: "GFS Neohellenic", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
@@ -16,6 +20,23 @@ header {
   overflow: hidden;
   font-size: 1.2rem;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+
+#logout{
+  width:7rem;
+  margin-left: 7rem;
+  background-color: #f6eb22;
+  color: #2c2c2c;
+  height: 1.5rem;
+}
+
+
+#logout:hover{
+  width:7rem;
+  margin-left: 7rem;
+  background-color: #ee3c2f;
 }
 
 main {
@@ -43,6 +64,12 @@ main {
   padding: 0.4rem;
   text-align: center;
   margin: 1rem;
+}
+
+.class:hover {
+ transform: scale(1.04);
+ transition: 0.2s ease-in-out;
+ box-shadow: 3px 3px 2px rgb(155, 155, 155);
 }
 
 .class--title {
@@ -78,9 +105,70 @@ button[type="submit"]:hover {
   background-color: #ffffff;
   color: rgb(74, 74, 74);
   transition: 0.14s ease-in-out;
+  height: 1.8rem;
 }
 
 #student--id{
   display: none;
+}
+
+
+#button--history{
+  background-color: rgb(74, 74, 74);
+  width: 30%;
+  height: 2rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 1.5rem;
+  font-size: 1rem;
+
+}
+
+#button--history:hover{
+ 
+  background-color:  #bbd38b;
+  transition: 0.3s ease-in-out;
+}
+
+
+
+#div--history{
+  width: 80%;
+  /* border: 2px solid black; */
+  margin: auto;
+  padding: 1.5rem;
+  background-color: #e8e6d4;
+  box-shadow: 2px 2px 2px rgb(173, 173, 173);
+  border-radius: 1rem;
+  font-family: "GFS Neohellenic", sans-serif;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#div--history p{
+  width: 22rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 2px grey;
+  margin-top: 0.5rem;
+  background-color:  #bbd38b;
+  border-radius: 0.5rem;
+  
+}
+
+#div--history p:hover{
+ transform: scale(1.05);
+ transition: .3s ease-in-out;
+  
 }
 

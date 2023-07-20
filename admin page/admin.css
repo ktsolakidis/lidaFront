@@ -19,6 +19,23 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#logout {
+  width: 7rem;
+  margin-left: 7rem;
+  background-color: #f6eb22;
+  color: #2c2c2c;
+  height: 1.5rem;
+  margin-top: 0px;
+}
+
+#logout:hover {
+  width: 7rem;
+  margin-left: 7rem;
+  background-color: #ee3c2f;
 }
 
 .navbar {
@@ -81,7 +98,6 @@ header {
   display: block;
   margin-top: 2rem;
   text-align: center;
-  
 }
 
 .main--p {
@@ -98,7 +114,7 @@ header {
 }
 
 .main--interior {
-  width: 80%;
+  width: 90%;
 
   padding: 1rem;
   text-align: center;
@@ -135,6 +151,7 @@ header {
   font-size: 1rem;
   margin: 2px 0;
   padding: 5px;
+  margin-left: 0px;
 }
 
 .titles p {
@@ -146,9 +163,12 @@ header {
   display: flex;
   justify-content: space-around;
   font-size: 1rem;
-  padding: 0;
-  margin: 2px 0;
-  height: 2rem;
+
+  text-align: center;
+}
+
+.row p {
+  text-align: left;
 }
 
 .row p {
@@ -214,9 +234,10 @@ label[for="first--name"] {
   margin-top: 10px;
 }
 
-button[type="submit"],#enroll {
+button[type="submit"],
+#enroll {
   margin-top: 8px;
-  width: 30%;
+  width: 6rem;
   border: none;
   padding: 3px;
   background-color: #e99c37;
@@ -224,13 +245,13 @@ button[type="submit"],#enroll {
   cursor: pointer;
 }
 
-button[type="submit"]:hover,#enroll:hover {
+button[type="submit"]:hover,
+#enroll:hover {
   transition: 0.5s;
   /* width: 20rem; */
   background-color: #f9e213;
-  width: 40%;
-  color:  #050500;
-  
+
+  color: #050500;
 }
 
 .dropdown {
@@ -240,71 +261,168 @@ button[type="submit"]:hover,#enroll:hover {
   font-family: "GFS Neohellenic", sans-serif;
   text-align: center;
   border-radius: 5px;
-  padding:0;
+  padding: 0;
   margin-top: 7px;
   margin-bottom: 10px;
 }
 
-input[name="title"],label[for="title"]{
+input[name="title"],
+label[for="title"] {
   margin-top: 20px;
 }
 
-.container p{
+.container p {
   display: block;
 }
 
-.info{
+.info {
   font-size: 1rem;
- width: 60%;
- margin: auto;
+  width: 60%;
+  margin: auto;
 }
 
-.container--small{
+.container--small {
   padding: 1rem;
   background-color: #bbd38b;
   margin-top: -0.5rem;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
-.one--div{
-  width: 60%;
-  height: 20rem;
+.one--div {
+  width: 100%;
+  height: 30rem;
   background-color: #bbd38b;
   border-radius: 15px;
-  padding: 3rem;
-
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.valuations{
+.valuation {
   width: 100%;
-  height: 100%;
-  background-color:#e8e6d4;
+  height: 33rem;
+  margin: 1rem;
+  background-color: #e8e6d4;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px #728e3b;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto auto;
+  font-size: 0.9rem;
+  text-align: left;
+  padding: 0.5rem;
+  transform: scale(0.86);
+}
+
+.valuation:hover {
+  transform: scale(0.9);
+  transition: 0.2s ease-in-out;
+}
+
+.tit {
+  color: #4e700b;
+}
+
+.container p.valuation--p {
+  font-size: 1rem;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin: 0.1rem;
+  margin-left: 0.4rem;
+  padding: 0.3rem;
+}
+
+#valuations--container{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  text-align: center;
+  align-items: center;
+}
+
+#classes--statistics{
+  position: relative;
+  margin-top: -.4rem;
+  width: 8rem;
+  height: 1.3rem;
+}
+
+#statistics--container{
+  width: 100%;
+  height: 30rem;
+  background-color: #bbd38b;
   border-radius: 15px;
-}
-
-.valuations ul{
-  list-style-type: none;
-  height:100%;
-  border-radius: 15px;
- display: flex;
- justify-content: center;
- flex-direction: column;
- align-items: center;
- overflow: hidden;
- padding: 0;
- 
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 
 }
 
-.valuations li{
-border: 1px solid black;
-width: 100%;
-height: 3rem;
-text-align: center;
-margin: auto;
-position: relative;
-margin-right: 10rem;
-text-align: center;
-margin-right: 50rem;
+
+#stats{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
 }
+
+#statistics--container .bar {
+  height: 1.5rem;
+  background-color: orange;
+  border-radius: 0.4rem;
+
+}
+
+.wrapper{
+  width : 25rem;
+  height: 1.5rem;
+  background-color: #636363;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+#dropdown--students--valuations,#dropdown--classes--valuations{
+
+  position: relative;
+  top: 0px;
+  width: 10rem;
+  height: 2rem;
+  background-color: #e8e6d4;
+  border-radius: 0.5rem;
+}
+
+#search--valuations{
+  width: 7rem;
+  margin-left: 7rem;
+  background-color: #31cceb;
+  color: #2c2c2c;
+  height: 2rem;
+  margin-top: 0px;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-right: 5rem;
+}
+
+#search--valuations:hover {
+  width: 7rem;
+  margin-left: 7rem;
+  background-color: #3188eb;
+  transition: 0.3s ease-in-out;
+  color: whitesmoke;
+}
+
+h3{
+  width: 230%;
+  margin-top: 3rem;
+  text-align: center;
+  align-self: center;
+}
+
+
+
 

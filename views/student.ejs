@@ -19,11 +19,16 @@
     <title>Document</title>
   </head>
   <body>
-    <header>Καλώς ήρθατε</header>
+    <header>
+      <p>Καλώς ήρθατε</p>
+
+      <form action="/logout" method="GET">
+        <button id="logout" type="submit">Αποσύνδεση</button>
+      </form>
+    </header>
     <p id="student--id"><%= currentStudent.id %></p>
-    <main>
-     
-    
-    </main>
+    <main></main>
+    <button id="button--history">Το ιστορικό μου</button>
+ 
   </body>
 </html>

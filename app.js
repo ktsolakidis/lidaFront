@@ -27,49 +27,54 @@ app.get("/", (req, res) => {
   res.render(htmlFilePath, { validation });
 });
 
+app.get("/logout", (req, res) => {
+  const htmlFilePath = path.join(__dirname, "views", "intro");
+  res.render(htmlFilePath, { validation });
+});
+
 //AUTHENTICATE USER AND LOGIN
 app.post("/authenticate", async (req, res) => {
   //console.log(req);
   let htmlFilePath;
 
-  try{
+  try {
+    const allStudents = await axios.get(
+      "http://localhost:5000/students/all",
+      {
+        httpsAgent: agent,
+      }
+    );
 
-  const allStudents = await axios.get(
-    "https://valuations-api-a8c38e285527.herokuapp.com/students/all",
-    {
-      httpsAgent: agent,
+    let found = false;
+    for (let k = 0; k < allStudents.data.length; k++) {
+      if (
+        allStudents.data[k].username == req.body.username &&
+        allStudents.data[k].password == req.body.password
+      ) {
+        htmlFilePath = path.join(__dirname, "views", "student");
+        currentStudent = {
+          id: allStudents.data[k].id,
+          name:
+            allStudents.data[k].first_name +
+            " " +
+            allStudents.data[k].last_name,
+        };
+
+        res.render(htmlFilePath, { currentStudent });
+        found = true;
+        break;
+      }
     }
-  );
-
-  let found = false;
-  for (let k = 0; k < allStudents.data.length; k++) {
-    if (
-      allStudents.data[k].username == req.body.username &&
-      allStudents.data[k].password == req.body.password
-    ) {
-      htmlFilePath = path.join(__dirname, "views", "student");
-      currentStudent = {
-        id: allStudents.data[k].id,
-        name:
-          allStudents.data[k].first_name + " " + allStudents.data[k].last_name,
+    if (!found) {
+      htmlFilePath = path.join(__dirname, "views", "intro");
+      validation = {
+        valid: "false",
       };
-
-      res.render(htmlFilePath, { currentStudent });
-      found = true;
-      break;
+      res.render(htmlFilePath, { validation });
     }
+  } catch (error) {
+    console.log(error);
   }
-  if (!found) {
-    htmlFilePath = path.join(__dirname, "views", "intro");
-    validation = {
-      valid: "false",
-    };
-    res.render(htmlFilePath, { validation });
-  }
-
-}catch(error){
-  console.log(error);
-}
 });
 
 app.post("/valuation", (req, res) => {
@@ -96,53 +101,46 @@ app.post("/valuation", (req, res) => {
 //   }
 // });
 
-
 app.post("/submitValuation", async (req, res) => {
 
-  try {
+    // let toSend = JSON.stringify({
+    //   student_id: req.body.studentId,
+    //   class_id: req.body.classId,
+    //   theory: req.body.theory,
+    //   solved_excercises: req.body.solvedExercises,
+    //   methodology: req.body.methodology,
+    //   pronunciation: req.body.pronunciation,
+    //   data_translation: req.body.dataTranslation,
+    //   general_difficulty: req.body.generalDifficulty,
+    //   other_difficulty: req.body.otherDifficulty,
+    //   metadotikotita: req.body.metadotikotita,
+    //   preparation: req.body.preparation,
+    // });
 
+    // console.log(toSend);
 
-
-    let toSend = JSON.stringify({
-      "student_id" : req.body.studentId ,
-      "class_id" :req.body.classId,
-      "theory" : req.body.theory,
-      "solved_excercises" : req.body.solvedExercises,
-      "methodology" :req.body.methodology ,
-      "pronunciation" : req.body.pronunciation,
-      "data_translation" :req.body.dataTranslation ,
-      "general_difficulty" : req.body.generalDifficulty,
-      "other_difficulty" :req.body.otherDifficulty,
-      "metadotikotita" :req.body.metadotikotita ,
-      "preparation" : req.body.preparation
-    });
-
-    let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'https://valuations-api-a8c38e285527.herokuapp.com/valuations/new',
-      headers: { 
-        'Content-Type': 'application/json'
-      },
-      data : toSend
-    };
+    // let config = {
+    //   method: "post",
+    //   maxBodyLength: Infinity,
+    //   url: "http://localhost:5000/valuations/new",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   data: toSend,
+    //   httpsAgent: agent,
+    // };
 
     // const response = await axios(config);
-    // console.log(JSON.stringify(response.data));
+    // // console.log(JSON.stringify(response.data));
 
-    // console.log(currentStudent);
+    // // console.log(currentStudent);
 
     htmlFilePath = path.join(__dirname, "views", "student");
     res.render(htmlFilePath, { currentStudent });
 
     //res.status(response.status).json(data);
-  } catch (error) {
-    // Handle error
-    console.error(error);
-  }
+  
 });
-
-
 
 app.listen(3000, () => {
   console.log(`Server started at http://localhost:${3000}`);

@@ -20,8 +20,12 @@
   </head>
   <body>
     <header>
-      <p>Σελίδα διαχειριστή.</p>
-      &nbsp; Καλησπέρα
+      <p>Σελίδα διαχειριστή. Καλησπέρα</p>
+ 
+      <form action="/logout" method="GET">
+        <button id="logout" type="submit" >Αποσύνδεση</button>
+      </form>
+      
     </header>
     <div class="navbar">
       <ul>
@@ -53,27 +57,24 @@
       <p class="main--p">Πρόσφατες αξιολογήσεις</p>
 
       <div class="main--interior">
-        <div class="one--div">
-          <div class="valuations">
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              
-            </ul>
+          <div class="one--div list" id="recent---valuations">
+            <div>
+              <label for="classes">Επιλέξτε Μάθημα</label>
+            <select id="dropdown--classes--valuations" name="classes" class="dropdown">
+              <option  value="all--classes">Όλα τα μαθήματα</option>
+            </select>
           </div>
-
+          <div>
+            <label for="students">Επιλέξτε Μαθητή</label>
+          <select id="dropdown--students--valuations" name="classes" class="dropdown">
+            <option  value="all--students">Όλοι οι μαθητές</option>
+          </select>
+          <button id="search--valuations">Αναζήτηση</button>
         </div>
-
-      </div>
-        
-      
-    </main>
+          
+            
+          </div>
+        </main>
 
 
     
@@ -113,61 +114,8 @@
             <p>Όνομα</p>
             <p>Επίθετο</p>
           </div>
-          <div class="list">
-            <div class=" row">
-                <p>Id</p>
-                <p>Username</p>
-                <p>Όνομα</p>
-                <p>Επίθετο</p>
-            </div>
-            <div class=" row">
-                <p>Id</p>
-                <p>Username</p>
-                <p>Όνομα</p>
-                <p>Επίθετο</p>
-            </div>
-    
-            <div class=" row">
-                <p>Id</p>
-                <p>Username</p>
-                <p>Όνομα</p>
-                <p>Επίθετο</p>
-            </div>
-    
-            <div class=" row">
-                <p>Id</p>
-                <p>Username</p>
-                <p>Όνομα</p>
-                <p>Επίθετο</p>
-            </div>
-    
-            <div class=" row">
-                <p>Id</p>
-                <p>Username</p>
-                <p>Όνομα</p>
-                <p>Επίθετο</p>
-            </div>
-    
-            <div class=" row">
-                <p>Id</p>
-                <p>Username</p>
-                <p>Όνομα</p>
-                <p>Επίθετο</p>
-            </div>
-    
-            <div class=" row">
-                <p>Id</p>
-                <p>Username</p>
-                <p>Όνομα</p>
-                <p>Επίθετο</p>
-            </div>
-    
-            <div class=" row">
-                <p>Id</p>
-                <p>Username</p>
-                <p>Όνομα</p>
-                <p>Επίθετο</p>
-            </div>
+          <div class="list" id="students--list">
+        
     
     
 
@@ -178,7 +126,7 @@
             <p>Νέος μαθητής</p>
           </div>
             <div class="new">
-              <form action="">
+              <form id="new--student" action="">
                 <div class="inputs">
                 <label for="first--name">Όνομα</label>
                 <input type="text" name="first--name" id="">
@@ -188,9 +136,9 @@
                 <input type="text" name="username" id="">
                 <label for="password">Password</label>
                 <input type="text" name="password" id="">
+                <button type="submit">Εισαγωγή</button>
               </div>
               
-                <button  type="submit">Εισαγωγή</button>
               
               </form>
 
@@ -227,34 +175,8 @@
             <p>Τάξη</p>
             <p>Κατηγορία</p>
           </div>
-          <div class="list">
-            <div class=" row">
-              <p>Id</p>
-              <p>Τίτλος</p>
-              <p>Τάξη</p>
-              <p>Κατηγορία</p>
-            </div>
-            <div class=" row">
-              <p>Id</p>
-              <p>Τίτλος</p>
-            <p>Τάξη</p>
-            <p>Κατηγορία</p>
-            </div>
-    
-            <div class=" row">
-              <p>Id</p>
-              <p>Τίτλος</p>
-              <p>Τάξη</p>
-              <p>Κατηγορία</p>
-            </div>
-    
-            <div class=" row">
-              <p>Id</p>
-              <p>Τίτλος</p>
-              <p>Τάξη</p>
-              <p>Κατηγορία</p>
-            </div>
-    
+          <div id="classes--list" class="list">
+        
            
           </div>
         </div>
@@ -263,7 +185,7 @@
             <p>Νέο μάθημα</p>
           </div>
             <div class="new">
-              <form action="">
+              <form id="new--class" action="">
                 <div class="inputs">
                 <label for="title">Τίτλος</label>
                 <input type="text" name="title" id="">
@@ -289,9 +211,9 @@
                 </select>
              
      
+                
+                  <button  type="submit">Εισαγωγή</button>
               </div>
-              
-                <button  type="submit">Εισαγωγή</button>
               
               </form>
 
@@ -328,28 +250,19 @@
 
         <div class="left">
           <p>Μαθητές</p>
+          <form id="new--listing" action="">
           <div class="container--small">
-          <select name="grade" class="dropdown">
-            <option value="A Γυμνασίου">Α' Γυμνασίου</option>
-            <option value="Β Γυμνασίου">Β' Γυμνασίου</option>
-            <option value="Γ Γυμνασίου">Γ' Γυμνασίου</option>
-            <option value="Ά Λυκείου">Α' Λυκείου</option>
-            <option value="Ά Λυκείου">Β' Λυκείου</option>
-            <option value="Ά Λυκείου">Γ' Λυκείου</option>
-          </select>
+              <select id="dropdown--students"
+                name="students" class="dropdown">
+              </select>
           </div>
         </div>
         <div class="right">
-          <form action="">
+          
           <p>Μαθήματα</p>
           <div class="container--small">
-            <select name="grade" class="dropdown">
-              <option value="A Γυμνασίου">Α' Γυμνασίου</option>
-              <option value="Β Γυμνασίου">Β' Γυμνασίου</option>
-              <option value="Γ Γυμνασίου">Γ' Γυμνασίου</option>
-              <option value="Ά Λυκείου">Α' Λυκείου</option>
-              <option value="Ά Λυκείου">Β' Λυκείου</option>
-              <option value="Ά Λυκείου">Γ' Λυκείου</option>
+            <select id="dropdown--classes" name="classes" class="dropdown">
+
             </select>
 
           </div>
@@ -388,8 +301,39 @@
     <main class="container">
       <p class="main--p">Στατιστικά</p>
 
-      <div class="main--interior">
-        <div class="one--div">
+      <div class="main--interior" id="valuations--container">
+       
+          <select id="classes--statistics" name="class" class="dropdown">
+          </select>
+          <div class="one--div" id="statistics--container">
+            <!-- <p id="title">Στατιστικά για το μάθημα Φυσική</p>
+            <div id="stats">
+              <p>Μέση Δυσκολία κατανόησης θεωρίας</p>
+              <div data-percentage="56" class="bar"></div>
+              <p>56</p>
+              <p>Μέση Δυσκολία κατανόησης θεωρίας</p>
+              <div data-percentage="56" class="bar"></div>
+              <p>56</p>
+              <p>Μέση Δυσκολία κατανόησης λυμένων ασκήσεων</p>
+              <div data-percentage="56" class="bar"></div>
+              <p>56</p>
+              <p>Μέση Δυσκολία κατανόησης μεθοδολογίας</p>
+              <div data-percentage="56" class="bar"></div>
+              <p>56</p>
+              <p>Μέση Δυσκολία εκφώνησης άσκησης</p>
+              <div data-percentage="56" class="bar"></div>
+              <p>56</p>
+              <p>Μέση Δυσκολία μετάφρασης δεδομένων</p>
+              <div data-percentage="56" class="bar"></div>
+              <p>56</p>
+              <p>Μέση Γενική δυσκολία</p>
+              <div data-percentage="45" class="bar"></div>
+              <p>56</p>
+              <p>Μέση Αξιολόγηση Μαθήματος</p>
+              <div data-percentage="78" class="bar"></div>
+              <p>56</p>
+            </div> -->
+          </div>
         
 
         </div>
